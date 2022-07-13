@@ -1,0 +1,16 @@
+[
+  {
+    "OrganizerID": "1",
+    "OrganizerImage": "./images/website/Jasjit.jpg",
+    "OrganizerName": "Jasjit Chopra",
+    "isVolunteer": "false",
+    "speakerLinkedIn": "https://www.linkedin.com/in/jasjitchopra/"
+  },
+  {
+    "OrganizerID": "2",
+    "OrganizerImage": "./images/speakers/Patrick.jpg",
+    "OrganizerName": "Patrick Guimonet",
+    "isVolunteer": "false",
+    "speakerLinkedIn": "https://www.linkedin.com/in/patrickguimonet/"
+  }
+]

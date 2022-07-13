@@ -1,0 +1,23 @@
+[
+    {
+        "sponsorId": "1",
+        "sponsorImage": "./images/website/PentharaLogo.svg",
+        "sponsorAltText": "Penthara Technologies",
+        "sponsorName": "Penthara Technologies",
+        "sponsorUrl": "https://www.penthara.com"
+    },
+    {
+        "sponsorId": "2",
+        "sponsorImage": "./images/website/ABALON.webp",
+        "sponsorAltText": "Abalon",
+        "sponsorName": "Abalon",
+        "sponsorUrl": "https://www.abalon.fr/"
+    },
+    {
+        "sponsorId": "3",
+        "sponsorImage": "./images/website/hifiLibrary.webp",
+        "sponsorAltText": "HiFi Library",
+        "sponsorName": "HiFi Library",
+        "sponsorUrl": "https://hifilibrary.com/"
+    }
+]
