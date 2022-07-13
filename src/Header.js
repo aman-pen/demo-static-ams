@@ -70,8 +70,7 @@ export const Header = () => {
                     <NavItem>
                       <NavLink href={encodeURI(data.url)}>
                         {" "}
-//                         {data.title}
-AKSMA
+                           {data.title}
                       </NavLink>
                     </NavItem>
                   );
