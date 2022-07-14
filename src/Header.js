@@ -154,7 +154,7 @@ export const Header = () => {
                     <Row className="fields-row">
                       <Col className="sessionNumber">
                         <span>{Speakers.length}</span>
-                        <span>speakers</span>
+                        <span>SPEAKERS</span>
                       </Col>
                       <Col className="trackNumber">
                         <span>{Sessions.length}</span>
