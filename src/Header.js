@@ -27,7 +27,10 @@ export const Header = () => {
   return (
     <div className="header" id="header">
       <Row className="head-nav">
-        <Col xs={3} className="d-flex align-items-center justify-content-center">
+        <Col
+          xs={3}
+          className="d-flex align-items-center justify-content-center"
+        >
           <img src={logo} alt="ICSS-logo" className="nav-bar-logo" />
         </Col>
         {isMobile ? (
@@ -70,7 +73,7 @@ export const Header = () => {
                     <NavItem>
                       <NavLink href={encodeURI(data.url)}>
                         {" "}
-                           {data.title}
+                        {data.title}
                       </NavLink>
                     </NavItem>
                   );
@@ -151,7 +154,7 @@ export const Header = () => {
                     <Row className="fields-row">
                       <Col className="sessionNumber">
                         <span>{Speakers.length}</span>
-                        <span>SPEAKERS</span>
+                        <span>speakers</span>
                       </Col>
                       <Col className="trackNumber">
                         <span>{Sessions.length}</span>
