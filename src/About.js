@@ -7,7 +7,7 @@ export const About = () => {
     <div className="about">
       <h1 className="about-heading"> ABOUT </h1>
       <div className="one-day-event">
-        A OneDay Event Focusing On Azure, Microsoft 365, Sharepoint.
+        A One Day Event Focusing On Azure, Microsoft 365, Sharepoint.
       </div>
       <div className="about-para-text">
         aMS (which stands for azure, Microsoft 365, SharePoint) is an
