@@ -34,7 +34,7 @@ function App() {
   );
   return (
     <div className="container-fluid icss">
-      {console.log(data.rooms[0])}
+      {/* {console.log(data.rooms)} */}
       <Header />
       <CountDownTimer />
       <About />
