@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useInsertionEffect } from "react";
 import "./App.scss";
 import { Header } from "./Header";
 import { About } from "./About";
@@ -11,30 +11,23 @@ import { Footer } from "./Footer";
 import { KeyNoteSpeaker } from "./KeyNoteSpeaker";
 import { CountDownTimer } from "./CountDownTimer";
 import { EventTeam } from "./EventTeam";
+import { Api } from "../src/services/Api";
 
 function App() {
-  // const [data, setData] = useState();
-  // useEffect(
-  //   // export const Api = () => {
-  //   async function Api() {
-  //     const response = await fetch(
-  //       "https://sessionize.com/api/v2/msqv8bxy/view/All",
-  //       {
-  //         method: "GET",
-  //         // headers: {
-  //         //   "x-rapidapi-host": "carbonfootprint1.p.rapidapi.com",
-  //         //   "x-rapidapi-key": "your_api_key",
-  //         // },
-  //       }
-  //     );
-  //     const data = await response.json();
-  //     setData(data); // Extracting data as a JSON Object from the response
-  //   },
-  //   []
-  // );
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    let mounted = true;
+    Api().then((item) => {
+      if (mounted) {
+        setData(item);
+      }
+    });
+    return () => (mounted = false);
+  }, []);
   return (
     <div className="container-fluid icss">
-      {/* {console.log(data.rooms)} */}
+      {console.log(data)}
       <Header />
       <CountDownTimer />
       <About />
