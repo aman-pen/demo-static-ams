@@ -45,7 +45,7 @@ export const Speaker = () => {
         <div className="row justify-content-center">
           {/* {console.log(speaker[0])} */}
           {speaker.map((data) => {
-            console.log(data);
+            // console.log(data);
             return (
               <>
                 {data.isTopSpeaker === true && (
