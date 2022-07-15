@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Speaker.scss";
-import SpeakersData from "./content/SpeakersData.json";
+// import SpeakersData from "./content/SpeakersData.json";
 import ModalSpeaker from "./ModalSpeaker";
 import LinkedInlogo from "./images/website/LinkedInlogo.png";
 import MVPlogo from "./images/website/mvp.jpg";
@@ -16,6 +16,7 @@ import {
 } from "reactstrap";
 import LazyLoad from "react-lazy-load";
 import ImageLoader from "./ImageLoader.js";
+import { ApiSpeaker } from "../src/services/Api";
 
 export const Speaker = () => {
   const [modal, setModal] = useState(false);
@@ -24,18 +25,33 @@ export const Speaker = () => {
     setClickedData(data);
     setModal(!modal);
   };
+
+  const [speaker, setSpeaker] = useState([]);
+
+  useEffect(() => {
+    let mounted = true;
+    ApiSpeaker().then((item) => {
+      if (mounted) {
+        setSpeaker(item);
+      }
+    });
+    return () => (mounted = false);
+  }, []);
+
   return (
     <>
       <div className="speakers" id="speakers">
         <h1 className="speaker-heading text-center">Speakers</h1>
         <div className="row justify-content-center">
-          {SpeakersData.map((data) => {
+          {/* {console.log(speaker[0])} */}
+          {speaker.map((data) => {
+            console.log(data);
             return (
               <>
-                {data.keynoteSpeaker === "false" && (
+                {data.isTopSpeaker === true && (
                   <div
                     className="col-xs-12 col-md-6 speaker-card-wrapper col-xl-4"
-                    key={data.speakerId}
+                    key={data.id}
                   >
                     <Card className="speaker-card shadow nopadding">
                       <div className="speaker-image">
@@ -47,18 +63,17 @@ export const Speaker = () => {
                         <LazyLoad height={400} debounce={false}>
                           <ImageLoader
                             onClick={() => toggle(data)}
-                            src={`${data.speakerImage}`}
-                            alt={data.speakerAltText}
+                            src={data.profilePicture}
+                            // alt={data.speakerAltText}
                           />
                         </LazyLoad>
                       </div>
-
                       <div
                         className="card-title-wrapper"
                         onClick={() => toggle(data)}
                       >
                         <CardTitle tag="h3" className="text-center ">
-                          {data.speakerName}
+                          {data.fullName}
                         </CardTitle>
                       </div>
                       <CardBody>
@@ -68,16 +83,15 @@ export const Speaker = () => {
                             tag="p"
                             className="mb-2 text-start nopadding col"
                           >
-                            {data.speakerTitle}
+                            {data.tagLine}
                           </CardSubtitle>
                           <CardText onClick={() => toggle(data)}>
-                            {data.speakerSubTitle}
+                            {/* {data.speakerSubTitle}sessions.name */}
                           </CardText>
                         </div>
-
-                        <div className="social-media-array">
+                        <div style={{ marginRight: "15px" }}>
                           {data.MVPstatus === "true" ? (
-                            <div>
+                            <div style={{ marginRight: "15px" }}>
                               <img
                                 src={MVPlogo}
                                 alt="MVP"
@@ -88,7 +102,7 @@ export const Speaker = () => {
                             <></>
                           )}
                           {data.MicrosoftEmployee === "true" ? (
-                            <div>
+                            <div style={{ marginRight: "15px" }}>
                               <img
                                 src={Microsoftlogo}
                                 alt="Microsoft Employee"
@@ -98,11 +112,13 @@ export const Speaker = () => {
                           ) : (
                             <></>
                           )}
-                          {data.speakerLinkedIn != null ? (
+                          {/* {console.log(data.links[1].url)} */}
+                          {data.links[1] != null ? (
                             <a
-                              href={data.speakerLinkedIn}
+                              href={data.links[1].url}
                               target="_blank"
                               rel="noreferrer"
+                              style={{ marginRight: "15px" }}
                             >
                               <img
                                 src={LinkedInlogo}
@@ -113,11 +129,12 @@ export const Speaker = () => {
                           ) : (
                             <></>
                           )}
-                          {data.speakerTwitter != null ? (
+                          {data.links[0] != null ? (
                             <a
-                              href={data.speakerTwitter}
+                              href={data.links[0].url}
                               target="_blank"
                               rel="noreferrer"
+                              style={{ marginRight: "15px" }}
                             >
                               <img
                                 src={Twitterlogo}

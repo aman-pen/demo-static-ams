@@ -1,36 +1,49 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Modal, ModalHeader, ModalBody } from "reactstrap";
 import "./Modal.scss";
 import LinkedInlogo from "./images/website/LinkedInlogo.png";
 import twitterlogo from "./images/website/twitterblue.png";
-import Sessions from "./content/Sessions.json";
+import { ApiSession } from "../src/services/Api";
 
 const ModalSpeaker = ({ modal, toggle, data }) => {
+  const [session, setSession] = useState([]);
+
+  useEffect(() => {
+    let mounted = true;
+    ApiSession().then((item) => {
+      if (mounted) {
+        setSession(item);
+      }
+    });
+    return () => (mounted = false);
+  }, []);
+
   const closeBtn = <button className="close" onClick={toggle}></button>;
-  const CurrentSessions = Sessions.filter(
+  const CurrentSessions = session.filter(
     (s) =>
-      s.speaker1Id === data.speakerId ||
-      s.speaker2Id === data.speakerId ||
-      s.speaker3Id === data.speakerId
+      s.id === data.sessions.id ||
+      s.id === data.sessions.id ||
+      s.id === data.sessions.id
   );
+
   return (
     <div>
       <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle} close={closeBtn}>
-          {data.speakerName}
+          {data.fullName}
           {/* <button type="button" className="close-icon"></button> */}
         </ModalHeader>
         <ModalBody className="nopadding">
           <div className="p-5 text-center">
             <img
-              src={`${data.speakerImage}`}
-              alt={data.speakerAltText}
+              src={data.profilePicture}
+              // alt={data.speakerAltText}
               className="modal-image"
             />
           </div>
           <div className="bg-grey speaker-details">
             <h4 className="mb-4">BIO</h4>
-            <p className="speaker-information">{data.speakerInformation}</p>
+            <p className="speaker-information">{data.bio}</p>
 
             {CurrentSessions.length > 0
               ? CurrentSessions.map((sdata) => {
@@ -39,14 +52,33 @@ const ModalSpeaker = ({ modal, toggle, data }) => {
                       <div className="divider"></div>
                       <div className="row">
                         <div className="modal-track-num col-4">
-                          Track {sdata.trackId}
+                          Track
+                          {/* {sdata.sessions[0].id} */}
                         </div>
                         <div className="col-8 speaker-session-time">
-                          <span>{sdata.sessionTime}</span>
+                          <span>
+                            {/* {sdata.sessionTime} */}
+                            12:10 - 1:55
+                          </span>
                         </div>
                       </div>
+
                       <div className="speaker-session-title">
-                        {sdata.sessionTitle}
+                        {
+                          sdata.sessions[
+                            sdata.sessions.findIndex(
+                              (obj) => obj.id == data.sessions[0].id
+                            )
+                          ].title
+                        }
+                        {/* {console.log(
+                          sdata.sessions[
+                            sdata.sessions.findIndex(
+                              (obj) => obj.id == data.sessions[0].id
+                            )
+                          ].title
+                        )}
+                        {console.log(sdata.sessions, "sessionTitle")} */}
                       </div>
                     </div>
                   );
@@ -55,8 +87,8 @@ const ModalSpeaker = ({ modal, toggle, data }) => {
 
             <div className="divider"></div>
             <div className="image-array">
-              {data.speakerLinkedIn != null ? (
-                <a href={data.speakerLinkedIn} target="_blank" rel="noreferrer">
+              {data.links[1] != null ? (
+                <a href={data.links[1].url} target="_blank" rel="noreferrer">
                   <img
                     src={LinkedInlogo}
                     alt="LinkedIn logo"
@@ -66,8 +98,8 @@ const ModalSpeaker = ({ modal, toggle, data }) => {
               ) : (
                 <></>
               )}
-              {data.speakerTwitter != null ? (
-                <a href={data.speakerTwitter} target="_blank" rel="noreferrer">
+              {data.links[0] != null ? (
+                <a href={data.links[0].url} target="_blank" rel="noreferrer">
                   <img src={twitterlogo} alt="Twitter logo" />
                 </a>
               ) : (

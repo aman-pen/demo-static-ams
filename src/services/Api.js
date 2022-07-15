@@ -3,3 +3,8 @@ export function ApiSpeaker() {
     (data) => data.json()
   );
 }
+export function ApiSession() {
+  return fetch("https://sessionize.com/api/v2/yh2xd00c/view/Sessions").then(
+    (data) => data.json()
+  );
+}
