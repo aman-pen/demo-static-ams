@@ -7,6 +7,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "bootstrap": "^5.0.2",
+    "cheerio": "^1.0.0-rc.12",
     "node-sass": "^4.14.1",
     "react": "^17.0.2",
     "react-burger-menu": "^3.0.6",
@@ -16,6 +17,7 @@
     "react-scripts": "^4.0.3",
     "reactjs-countdown": "0.0.8",
     "reactstrap": "^8.9.0",
+    "request-promise": "^4.2.6",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
