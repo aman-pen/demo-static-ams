@@ -24,12 +24,12 @@ function App() {
   }, []);
   return (
     <div className="container-fluid icss">
-      {/* {(console.log(endDate), "scrapDate")} */}
+      {(console.log(endDate), "Check Working")}
       <Header />
       <CountDownTimer />
       <About />
       <Donate />
-      {currDate < endDate ? (
+      {currDate > endDate ? (
         <SpeakerRegister />
       ) : (
         <>
