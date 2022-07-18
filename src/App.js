@@ -12,26 +12,32 @@ import { Footer } from "./Footer";
 import { CountDownTimer } from "./CountDownTimer";
 import { EventTeam } from "./EventTeam";
 import { webScrap } from "./services/Api";
-import rp from "request-promise";
+import { SpeakerRegister } from "./SpeakerRegister";
+
 function App() {
+  const [endDate, setEndDate] = useState();
+  const [currDate] = useState(new Date());
   useEffect(() => {
-    rp({
-      url: "https://sessionize.com/global-azure-blr-2022/",
-      headers: {
-        "User-Agent": "Request-Promise",
-      },
-    }).then((html) => console.log(html));
-    // .catch((err) => console.log(err));
+    webScrap().then((item) => {
+      setEndDate(item);
+    });
   }, []);
   return (
     <div className="container-fluid icss">
+      {/* {(console.log(endDate), "scrapDate")} */}
       <Header />
       <CountDownTimer />
       <About />
       <Donate />
-      <Agenda />
+      {currDate < endDate ? (
+        <SpeakerRegister />
+      ) : (
+        <>
+          <Agenda />
+          <Speaker />
+        </>
+      )}
       {/* <KeyNoteSpeaker /> */}
-      <Speaker />
       <Sponsor />
       <UserGroups />
       <EventTeam />
