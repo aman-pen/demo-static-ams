@@ -11,7 +11,7 @@ export const EventTeam = () => {
       <div className="row">
         {EventTeams.map((data) => {
           return (
-            <>
+            <React.Fragment key={data.OrganizerID}>
               {data.isVolunteer === "false" ? (
                 <div className="col">
                   <img
@@ -36,7 +36,7 @@ export const EventTeam = () => {
                   </a>
                 </div>
               ) : null}
-            </>
+            </React.Fragment>
           );
         })}
       </div>

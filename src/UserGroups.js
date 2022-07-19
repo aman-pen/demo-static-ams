@@ -13,7 +13,10 @@ export const UserGroups = () => {
       <div className="row group-wrapper">
         {UserGroupsData.map((data) => {
           return (
-            <div className="col-xs-12 col-md-12 col-lg-6 group-card text-center">
+            <div
+              key={data.groupName}
+              className="col-xs-12 col-md-12 col-lg-6 group-card text-center"
+            >
               <a
                 href={data.groupUrl}
                 target="_blank"
@@ -21,10 +24,7 @@ export const UserGroups = () => {
                 rel="noreferrer"
               >
                 <div className="col-3 col-xs-2 group-img">
-                  <img
-                    src={`${data.groupImage}`}
-                    alt={data.groupAltText}
-                  />
+                  <img src={`${data.groupImage}`} alt={data.groupAltText} />
                 </div>
 
                 <div className="col-8 col-xs-8 group-name">

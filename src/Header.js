@@ -73,7 +73,7 @@ export const Header = () => {
               <Nav navbar>
                 {NavbarData.map((data) => {
                   return (
-                    <NavItem>
+                    <NavItem key={data.title}>
                       <NavLink href={encodeURI(data.url)}>
                         {" "}
                         {data.title}
@@ -89,7 +89,7 @@ export const Header = () => {
       <Row className="head-data">
         {HeaderData.map((data) => {
           return (
-            <>
+            <React.Fragment key={data.eventTitle}>
               <Col md={12} xl={6} className=" content-left row">
                 <Row className="siteTitle">
                   <Col>
@@ -171,7 +171,7 @@ export const Header = () => {
                   </Col>
                 </Row>
               </Col>
-            </>
+            </React.Fragment>
           );
         })}
       </Row>

@@ -35,7 +35,7 @@ export const ShowSessionData = (props) => {
       <div className="container-fluid trackdata">
         {CurrentSessions.map((data) => {
           return (
-            <>
+            <React.Fragment key={data.sessionId}>
               <Row className=" trackdata-bg " key={data.event}>
                 {ShowSessionUrl === "false" ? (
                   <>
@@ -289,7 +289,7 @@ export const ShowSessionData = (props) => {
                   </>
                 )}
               </Row>
-            </>
+            </React.Fragment>
           );
         })}
       </div>
