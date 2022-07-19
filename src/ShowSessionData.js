@@ -62,13 +62,14 @@ export const ShowSessionData = (props) => {
                           <div className="speaker3">
                             <LazyLoad height={70} width={70} debounce={false}>
                               <ImageLoader
-                                onClick={() =>
-                                  SpeakerModaltoggle(
-                                    Speakers.filter(
-                                      (s) => s.speakerId === data.speaker3Id
-                                    )[0]
-                                  )
-                                }
+                                // onClick={
+                                //   () => SpeakerModaltoggle(data)
+                                //   // SpeakerModaltoggle(
+                                //   //   Speakers.filter(
+                                //   //     (s) => s.speakerId === data.speaker3Id
+                                //   //   )[0]
+                                //   // )
+                                // }
                                 src={`${
                                   Speakers.filter(
                                     (s) => s.speakerId === data.speaker3Id
@@ -94,13 +95,13 @@ export const ShowSessionData = (props) => {
                           <div className="speaker2">
                             <LazyLoad height={70} width={70} debounce={false}>
                               <ImageLoader
-                                onClick={() =>
-                                  SpeakerModaltoggle(
-                                    Speakers.filter(
-                                      (s) => s.speakerId === data.speaker2Id
-                                    )[0]
-                                  )
-                                }
+                                // onClick={() =>
+                                //   SpeakerModaltoggle(
+                                //     Speakers.filter(
+                                //       (s) => s.speakerId === data.speaker2Id
+                                //     )[0]
+                                //   )
+                                // }
                                 src={`${
                                   Speakers.filter(
                                     (s) => s.speakerId === data.speaker2Id
@@ -127,13 +128,13 @@ export const ShowSessionData = (props) => {
                           <div className="speaker1">
                             <LazyLoad height={70} width={70} debounce={false}>
                               <ImageLoader
-                                onClick={() =>
-                                  SpeakerModaltoggle(
-                                    Speakers.filter(
-                                      (s) => s.speakerId === data.speaker1Id
-                                    )[0]
-                                  )
-                                }
+                                // onClick={() =>
+                                //   SpeakerModaltoggle(
+                                //     Speakers.filter(
+                                //       (s) => s.speakerId === data.speaker1Id
+                                //     )[0]
+                                //   )
+                                // }
                                 src={`${
                                   Speakers.filter(
                                     (s) => s.speakerId === data.speaker1Id
@@ -178,13 +179,13 @@ export const ShowSessionData = (props) => {
                           <div className="speaker3">
                             <LazyLoad height={70} width={70} debounce={false}>
                               <ImageLoader
-                                onClick={() =>
-                                  SpeakerModaltoggle(
-                                    Speakers.filter(
-                                      (s) => s.speakerId === data.speaker3Id
-                                    )[0]
-                                  )
-                                }
+                                // onClick={() =>
+                                //   SpeakerModaltoggle(
+                                //     Speakers.filter(
+                                //       (s) => s.speakerId === data.speaker3Id
+                                //     )[0]
+                                //   )
+                                // }
                                 src={`${
                                   Speakers.filter(
                                     (s) => s.speakerId === data.speaker3Id
@@ -209,13 +210,13 @@ export const ShowSessionData = (props) => {
                           <div className="speaker2">
                             <LazyLoad height={70} width={70} debounce={false}>
                               <ImageLoader
-                                onClick={() =>
-                                  SpeakerModaltoggle(
-                                    Speakers.filter(
-                                      (s) => s.speakerId === data.speaker2Id
-                                    )[0]
-                                  )
-                                }
+                                // onClick={() =>
+                                //   SpeakerModaltoggle(
+                                //     Speakers.filter(
+                                //       (s) => s.speakerId === data.speaker2Id
+                                //     )[0]
+                                //   )
+                                // }
                                 src={`${
                                   Speakers.filter(
                                     (s) => s.speakerId === data.speaker2Id
@@ -241,13 +242,13 @@ export const ShowSessionData = (props) => {
                           <div className="speaker1">
                             <LazyLoad height={70} width={70} debounce={false}>
                               <ImageLoader
-                                onClick={() =>
-                                  SpeakerModaltoggle(
-                                    Speakers.filter(
-                                      (s) => s.speakerId === data.speaker1Id
-                                    )[0]
-                                  )
-                                }
+                                // onClick={() =>
+                                //   SpeakerModaltoggle(
+                                //     Speakers.filter(
+                                //       (s) => s.speakerId === data.speaker1Id
+                                //     )[0]
+                                //   )
+                                // }
                                 src={`${
                                   Speakers.filter(
                                     (s) => s.speakerId === data.speaker1Id
