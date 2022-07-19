@@ -17,7 +17,7 @@ export function ApiSession() {
 
 export function webScrap() {
   return fetch("https://sessionize.com/global-azure-blr-2022/", {
-    // mode: "cors",
+    mode: "cors",
     headers: {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
