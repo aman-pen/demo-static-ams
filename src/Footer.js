@@ -31,32 +31,34 @@ export const Footer = () => {
           <div className="row ">
             {footerData.map((data) => {
               return (
-                <div className="col-10 col-xs-12 col-lg-12 media-array text-center">
-                  <a
-                    className="social-media-icon"
-                    target="_blank"
-                    href={data.linkedInLink}
-                    rel="noreferrer"
-                  >
-                    <img src={linkedInLogo} alt="LinkedIn Logo" />
-                  </a>
-                  <a
-                    className="social-media-icon"
-                    target="_blank"
-                    href={data.TwitterLink}
-                    rel="noreferrer"
-                  >
-                    <img src={TwitterLogo} alt="twitter-logo" />
-                  </a>
-                  <a
-                    className="social-media-icon"
-                    target="_blank"
-                    href={data.facebookLink}
-                    rel="noreferrer"
-                  >
-                    <img src={FaceboolLogo} alt="facebook logo" />
-                  </a>
-                </div>
+                <React.Fragment key={data.email}>
+                  <div className="col-10 col-xs-12 col-lg-12 media-array text-center">
+                    <a
+                      className="social-media-icon"
+                      target="_blank"
+                      href={data.linkedInLink}
+                      rel="noreferrer"
+                    >
+                      <img src={linkedInLogo} alt="LinkedIn Logo" />
+                    </a>
+                    <a
+                      className="social-media-icon"
+                      target="_blank"
+                      href={data.TwitterLink}
+                      rel="noreferrer"
+                    >
+                      <img src={TwitterLogo} alt="twitter-logo" />
+                    </a>
+                    <a
+                      className="social-media-icon"
+                      target="_blank"
+                      href={data.facebookLink}
+                      rel="noreferrer"
+                    >
+                      <img src={FaceboolLogo} alt="facebook logo" />
+                    </a>
+                  </div>
+                </React.Fragment>
               );
             })}
           </div>
@@ -64,9 +66,7 @@ export const Footer = () => {
       </div>
       <div className="row copyright">
         <div className="col">
-          <span>
-            All Rights Reserved © 
-          </span>
+          <span>All Rights Reserved ©</span>
         </div>
       </div>
     </div>

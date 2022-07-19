@@ -9,7 +9,10 @@ import HeaderData from "./content/HeaderData.json";
 import logo from "./images/website/aMS-Logo.webp";
 import twitterLogo from "./images/website/twittericon.png";
 import { Navbar, Nav, NavItem, NavLink, Row, Col } from "reactstrap";
-import { isDesktop, isMobile } from "react-device-detect";
+import {
+  // isDesktop,
+  isMobile,
+} from "react-device-detect";
 import { slide as Menu } from "react-burger-menu";
 import hamburgerclose from "./images/website/close.png";
 

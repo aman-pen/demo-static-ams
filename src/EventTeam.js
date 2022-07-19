@@ -17,6 +17,7 @@ export const EventTeam = () => {
                   <img
                     src={`${data.OrganizerImage}`}
                     className="organizer-image"
+                    alt="organizer"
                   />
                   <h4 className="organizer-name">
                     <span>{data.OrganizerName}</span>
@@ -25,6 +26,7 @@ export const EventTeam = () => {
                     href={data.speakerLinkedIn}
                     target="_blank"
                     className="col-2 nopadding"
+                    rel="noreferrer"
                   >
                     <img
                       src={LinkedInlogo}
@@ -50,6 +52,7 @@ export const EventTeam = () => {
                       <img
                         src={`${data.OrganizerImage}`}
                         className="organizer-image"
+                        alt="organizer"
                       />
                       <h4 className="organizer-name">
                         <span>{data.OrganizerName}</span>
@@ -58,6 +61,7 @@ export const EventTeam = () => {
                         href={data.speakerLinkedIn}
                         target="_blank"
                         className="col-2 nopadding"
+                        rel="noreferrer"
                       >
                         <img
                           src={LinkedInlogo}

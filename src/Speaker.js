@@ -8,7 +8,7 @@ import Microsoftlogo from "./images/website/microsoft_logo.png";
 import Twitterlogo from "./images/website/twitterblue.png";
 import {
   Card,
-  CardImg,
+  // CardImg,
   CardText,
   CardBody,
   CardTitle,
@@ -47,7 +47,7 @@ export const Speaker = () => {
           {speaker.map((data) => {
             // console.log(data);
             return (
-              <>
+              <React.Fragment key={data.id}>
                 {data.isTopSpeaker === true && (
                   <div
                     className="col-xs-12 col-md-6 speaker-card-wrapper col-xl-4"
@@ -56,8 +56,8 @@ export const Speaker = () => {
                     <Card className="speaker-card shadow nopadding">
                       <div className="speaker-image">
                         <div id="cube">
-                          <div class="square-holder">
-                            <div class="square" id="square"></div>
+                          <div className="square-holder">
+                            <div className="square" id="square"></div>
                           </div>
                         </div>
                         <LazyLoad height={400} debounce={false}>
@@ -150,7 +150,7 @@ export const Speaker = () => {
                     </Card>
                   </div>
                 )}
-              </>
+              </React.Fragment>
             );
           })}
         </div>

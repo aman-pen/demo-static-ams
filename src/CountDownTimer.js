@@ -3,10 +3,10 @@ import CountDown from "reactjs-countdown";
 import "./CountDownTimer.scss";
 import { Container, Row, Col } from "reactstrap";
 import {
-  isDesktop,
-  isMobile,
+  // isDesktop,
+  // isMobile,
   isMobileOnly,
-  isTablet,
+  // isTablet,
 } from "react-device-detect";
 
 export const CountDownTimer = () => {
@@ -23,10 +23,7 @@ export const CountDownTimer = () => {
               </Row>
               <Row>
                 <Col>
-                  <span className="timer-title">
-                    {" "}
-                    aMS Delhi{" "}
-                  </span>
+                  <span className="timer-title"> aMS Delhi </span>
                 </Col>
               </Row>
             </Col>
@@ -44,10 +41,7 @@ export const CountDownTimer = () => {
           </Row>
           <Row>
             <Col>
-              <span className="timer-title-mobile">
-                {" "}
-                aMS Delhi{" "}
-              </span>
+              <span className="timer-title-mobile"> aMS Delhi </span>
             </Col>
           </Row>
           <Row className="timer-mobile">

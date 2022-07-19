@@ -38,6 +38,7 @@ const ModalSpeaker = ({ modal, toggle, data }) => {
             <img
               src={data.profilePicture}
               // alt={data.speakerAltText}
+              alt="speaker"
               className="modal-image"
             />
           </div>
@@ -67,7 +68,7 @@ const ModalSpeaker = ({ modal, toggle, data }) => {
                         {
                           sdata.sessions[
                             sdata.sessions.findIndex(
-                              (obj) => obj.id == data.sessions[0].id
+                              (obj) => obj.id === data.sessions[0].id.toString()
                             )
                           ].title
                         }

@@ -31,7 +31,7 @@ const ModalAgenda = ({ modal, toggle, data }) => {
                       .speakerImage
                   }`}
                   className="speaker-img mb-3"
-                  alt="speaker image"
+                  alt="speaker"
                 />
                 <p className="speaker-name">
                   {
@@ -50,7 +50,7 @@ const ModalAgenda = ({ modal, toggle, data }) => {
                       .speakerImage
                   }`}
                   className="speaker-img mb-3"
-                  alt="speaker image"
+                  alt="speaker"
                 />
                 <p className="speaker-name">
                   {
@@ -69,7 +69,7 @@ const ModalAgenda = ({ modal, toggle, data }) => {
                       .speakerImage
                   }`}
                   className="speaker-img mb-3"
-                  alt="speaker image"
+                  alt="speaker"
                 />
                 <p className="speaker-name">
                   {
