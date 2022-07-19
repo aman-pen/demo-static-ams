@@ -1,5 +1,3 @@
-import axios from "axios";
-
 export function ApiSpeaker() {
   return fetch("https://sessionize.com/api/v2/yh2xd00c/view/Speakers")
     .then((data) => data.json())
@@ -18,13 +16,13 @@ export function ApiSession() {
 export function webScrap() {
   return fetch("https://sessionize.com/global-azure-blr-2022/", {
     // mode: "cors",
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-    },
+    // headers: {
+    //   "Access-Control-Allow-Origin": "*",
+    //   "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+    // },
   })
     .then((res) => {
-      console.log(res);
+      // console.log(res);
       res.text();
     })
     .then((data) => {
