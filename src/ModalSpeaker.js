@@ -19,12 +19,6 @@ const ModalSpeaker = ({ modal, toggle, data }) => {
   }, []);
 
   const closeBtn = <button className="close" onClick={toggle}></button>;
-  const CurrentSessions = session.filter(
-    (s) =>
-      s.id === data.sessions.id ||
-      s.id === data.sessions.id ||
-      s.id === data.sessions.id
-  );
 
   return (
     <div>
@@ -46,33 +40,35 @@ const ModalSpeaker = ({ modal, toggle, data }) => {
             <h4 className="mb-4">BIO</h4>
             <p className="speaker-information">{data.bio}</p>
 
-            {CurrentSessions.length > 0
-              ? CurrentSessions.map((sdata) => {
+            {session.length > 0
+              ? session.map((sdata) => {
                   return (
-                    <div className="speaker-session-details">
-                      <div className="divider"></div>
-                      <div className="row">
-                        <div className="modal-track-num col-4">
-                          Track
-                          {/* {sdata.sessions[0].id} */}
+                    <React.Fragment key={sdata.sessions[0].id}>
+                      <div className="speaker-session-details">
+                        <div className="divider"></div>
+                        <div className="row">
+                          <div className="modal-track-num col-4">
+                            Track
+                            {/* {sdata.sessions[0].id} */}
+                          </div>
+                          <div className="col-8 speaker-session-time">
+                            <span>
+                              {/* {sdata.sessionTime} */}
+                              12:10 - 1:55
+                            </span>
+                          </div>
                         </div>
-                        <div className="col-8 speaker-session-time">
-                          <span>
-                            {/* {sdata.sessionTime} */}
-                            12:10 - 1:55
-                          </span>
-                        </div>
-                      </div>
 
-                      <div className="speaker-session-title">
-                        {
-                          sdata.sessions[
-                            sdata.sessions.findIndex(
-                              (obj) => obj.id === data.sessions[0].id.toString()
-                            )
-                          ].title
-                        }
-                        {/* {console.log(
+                        <div className="speaker-session-title">
+                          {
+                            sdata.sessions[
+                              sdata.sessions.findIndex(
+                                (obj) =>
+                                  obj.id === data.sessions[0].id.toString()
+                              )
+                            ].title
+                          }
+                          {/* {console.log(
                           sdata.sessions[
                             sdata.sessions.findIndex(
                               (obj) => obj.id == data.sessions[0].id
@@ -80,8 +76,9 @@ const ModalSpeaker = ({ modal, toggle, data }) => {
                           ].title
                         )}
                         {console.log(sdata.sessions, "sessionTitle")} */}
+                        </div>
                       </div>
-                    </div>
+                    </React.Fragment>
                   );
                 })
               : null}
