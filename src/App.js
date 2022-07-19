@@ -24,7 +24,6 @@ function App() {
   }, []);
   return (
     <div className="container-fluid icss">
-      {(console.log(endDate), "Check Working")}
       <Header />
       <CountDownTimer />
       <About />
